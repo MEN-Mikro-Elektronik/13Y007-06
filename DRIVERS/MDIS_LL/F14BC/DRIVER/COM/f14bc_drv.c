@@ -12,27 +12,24 @@
  *
  *     \switches _ONE_NAMESPACE_PER_DRIVER_, F14BC_SW
  */
- /*-------------------------------[ History ]--------------------------------
- *
- * $Log: f14bc_drv.c,v $
- * Revision 1.4  2009/09/04 11:32:21  MRoth
- * R: MDVE warnings
- * M: removed unused variable valueP
- *
- * Revision 1.3  2009/08/31 14:14:16  MRoth
- * R: Porting to MDIS5
- * M: added support for 64bit (Set/GetStat prototypes)
- *
- * Revision 1.2  2007/02/20 16:13:12  DPfeuffer
- * - SMB2 error codes no longer mapped into device specific error code range by the driver
- *   (now done by smb2 lib)
- *
- * Revision 1.1  2006/11/08 09:45:36  DPfeuffer
- * Initial Revision
- *
+ /*
  *---------------------------------------------------------------------------
  * (c) Copyright 2006 by MEN Mikro Elektronik GmbH, Nuernberg, Germany
  ****************************************************************************/
+/*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 2 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
 
 #define _NO_LL_HANDLE		/* ll_defs.h: don't define LL_HANDLE struct */
 
