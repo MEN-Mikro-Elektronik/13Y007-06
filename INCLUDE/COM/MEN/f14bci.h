@@ -10,18 +10,7 @@
  *                      
  *     Switches: -
  */
-/*-------------------------------[ History ]---------------------------------
- *
- * $Log: f14bci.h,v $
- * Revision 3.3  2007/12/03 17:53:42  SVogel
- * update, due to new build
- *
- * Revision 3.2  2007/06/08 15:13:30  SVogel
- * cosmetics
- *
- * Revision 3.1  2006/11/08 09:45:48  DPfeuffer
- * Initial Revision
- *
+/*
  *---------------------------------------------------------------------------
  * (c) Copyright 2006 by MEN Mikro Elektronik GmbH, Nuremberg, Germany 
  ****************************************************************************/
