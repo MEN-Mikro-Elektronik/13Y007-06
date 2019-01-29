@@ -55,8 +55,8 @@
 static MDIS_PATH  G_Path;
 
 static struct {
-	u_int32	nom;
-	u_int32	dev;
+	int32	nom;
+	int32	dev;
 } G_VoltCh[MAX_VOLT_CH];	/* volt channel values */
 
 /*--------------------------------------+
