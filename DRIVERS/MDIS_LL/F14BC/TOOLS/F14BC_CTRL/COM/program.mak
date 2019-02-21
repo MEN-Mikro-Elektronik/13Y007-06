@@ -6,14 +6,8 @@
 #
 #    Description: Makefile definitions for F14BC_CTRL tool
 #
-#---------------------------------[ History ]---------------------------------
-#
-#   $Log: program.mak,v $
-#   Revision 1.1  2006/11/08 09:45:45  DPfeuffer
-#   Initial Revision
-#
 #-----------------------------------------------------------------------------
-#   (c) Copyright 2006 by MEN mikro elektronik GmbH, Nuernberg, Germany
+#   Copyright (c) 2006-2019, MEN Mikro Elektronik GmbH
 #*****************************************************************************
 
 MAK_NAME=f14bc_ctrl
