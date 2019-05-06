@@ -163,6 +163,6 @@
 /** \example f14bc_min.dsc */
 /** \example f14bc_max.dsc */
 
-/*! \page dummy
+/*! \page f14bcdummy MEN logo
   \menimages
 */
