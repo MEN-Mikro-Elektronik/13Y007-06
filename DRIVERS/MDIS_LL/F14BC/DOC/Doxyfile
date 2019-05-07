@@ -1,0 +1,26 @@
+@INCLUDE_PATH = $(MEN_DOXYGENTMPL)
+@INCLUDE = DoxyfileCommon
+
+PROJECT_NAME           = "F14BC MDIS Driver"
+INPUT                  = ../DRIVER/COM \
+                         ../TOOLS/F14BC_CTRL/COM/f14bc_ctrl.c \
+                         ../../../../TOOLS/WDOG/WDOG_TEST/COM/wdog_test.c \
+                         ../../../../TOOLS/WDOG/WDOG_SIMP/COM/wdog_simp.c \
+                         $(MEN_COM_INC)/MEN/f14bc_drv.h \
+                         $(MEN_COM_INC)/MEN/wdog.h
+            
+EXAMPLE_RECURSIVE      = YES
+EXAMPLE_PATH           = ../DRIVER/COM \
+                         ../TOOLS/F14BC_CTRL/COM \
+                         ../../../../TOOLS/WDOG/WDOG_TEST/COM \
+                         ../../../../TOOLS/WDOG/WDOG_SIMP/COM
+OUTPUT_DIRECTORY       = .
+EXTRACT_ALL            = YES
+EXTRACT_STATIC         = YES
+GENERATE_HTMLHELP      = YES
+WARNINGS               = YES
+WARN_IF_DOC_ERROR      = YES
+WARN_IF_UNDOCUMENTED   = YES
+GENERATE_HTMLHELP      = YES
+TAGFILES               = ../../../../LIBSRC/MDIS_API/DOC/mdis_api.tag=../../../../../LIBSRC/MDIS_API/DOC/html
+GENERATE_TAGFILE       = f14bc_driver.tag
