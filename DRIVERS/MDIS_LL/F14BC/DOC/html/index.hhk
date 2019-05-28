@@ -393,12 +393,57 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html"><param name="Name" value="wdog.h"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a0"><param name="Name" value="M_CH_PROFILE_WDOG"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a18"><param name="Name" value="WDOG_ERR_PIN"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a14"><param name="Name" value="WDOG_IRQ_PIN"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a17"><param name="Name" value="WDOG_IRQ_REASON"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a16"><param name="Name" value="WDOG_IRQ_SIGCLR"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a15"><param name="Name" value="WDOG_IRQ_SIGSET"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a12"><param name="Name" value="WDOG_OUT_PIN"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a13"><param name="Name" value="WDOG_OUT_REASON"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a7"><param name="Name" value="WDOG_RESET_CTRL"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a6"><param name="Name" value="WDOG_SHOT"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a1"><param name="Name" value="WDOG_START"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a5"><param name="Name" value="WDOG_STATUS"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a3"><param name="Name" value="WDOG_STOP"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a4"><param name="Name" value="WDOG_TIME"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a11"><param name="Name" value="WDOG_TIME_IRQ"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a10"><param name="Name" value="WDOG_TIME_MAX"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a9"><param name="Name" value="WDOG_TIME_MIN"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a2"><param name="Name" value="WDOG_TRIG"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a8"><param name="Name" value="WDOG_TRIG_PAT"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a19"><param name="Name" value="WDOG_TRIGPAT"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="WDOG_ERR_PIN"><param name="Name" value="WDOG_ERR_PIN"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a18"><param name="Name" value="wdog.h"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="WDOG_IRQ_PIN"><param name="Name" value="WDOG_IRQ_PIN"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a14"><param name="Name" value="wdog.h"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="WDOG_IRQ_REASON"><param name="Name" value="WDOG_IRQ_REASON"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a17"><param name="Name" value="wdog.h"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="WDOG_IRQ_SIGCLR"><param name="Name" value="WDOG_IRQ_SIGCLR"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a16"><param name="Name" value="wdog.h"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="WDOG_IRQ_SIGSET"><param name="Name" value="WDOG_IRQ_SIGSET"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a15"><param name="Name" value="wdog.h"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="WDOG_OUT_PIN"><param name="Name" value="WDOG_OUT_PIN"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a12"><param name="Name" value="wdog.h"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="WDOG_OUT_REASON"><param name="Name" value="WDOG_OUT_REASON"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a13"><param name="Name" value="wdog.h"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="WDOG_RESET_CTRL"><param name="Name" value="WDOG_RESET_CTRL"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a7"><param name="Name" value="wdog.h"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="See Also" value="WDOG_SHOT"><param name="Name" value="WDOG_SHOT"></OBJECT>
   <UL>
@@ -432,9 +477,29 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a4"><param name="Name" value="wdog.h"></OBJECT>
   </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="WDOG_TIME_IRQ"><param name="Name" value="WDOG_TIME_IRQ"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a11"><param name="Name" value="wdog.h"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="WDOG_TIME_MAX"><param name="Name" value="WDOG_TIME_MAX"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a10"><param name="Name" value="wdog.h"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="WDOG_TIME_MIN"><param name="Name" value="WDOG_TIME_MIN"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a9"><param name="Name" value="wdog.h"></OBJECT>
+  </UL>
   <LI><OBJECT type="text/sitemap"><param name="See Also" value="WDOG_TRIG"><param name="Name" value="WDOG_TRIG"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a2"><param name="Name" value="wdog.h"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="WDOG_TRIG_PAT"><param name="Name" value="WDOG_TRIG_PAT"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a8"><param name="Name" value="wdog.h"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="See Also" value="WDOG_TRIGPAT"><param name="Name" value="WDOG_TRIGPAT"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="wdog_8h.html#a19"><param name="Name" value="wdog.h"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="See Also" value="wdStatus"><param name="Name" value="wdStatus"></OBJECT>
   <UL>

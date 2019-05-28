@@ -11,7 +11,7 @@
 
 <div class="left_to_right" style="padding-top: 6px; background-color: #F0F0F0; height: 110px; border-bottom: 2px solid #D1D1D2;">
 	<!-- Titel -->
-	<img src="menlogo.gif" alt="MEN" style="float: left; height: 103px; width: 155px; margin: 0px;"></a>
+	<img src="menlogo.gif" alt="MEN" style="float: left; height: 103px; width: 155px; margin: 0px;">
 	<h1 style="margin: 0px; padding-top: 35px; padding-bottom: 0px;">F14BC MDIS Driver &nbsp; </h1>
 	<h3>Example Documentation</h3>
 </div>
@@ -27,22 +27,24 @@
 <span class="comment"> ************                    F14BC_CTRL                        ************</span>
 <span class="comment"> ************                                                    ************</span>
 <span class="comment"> ****************************************************************************/</span>
- <span class="comment">/*-------------------------------[ History ]--------------------------------</span>
-<span class="comment"> *</span>
-<span class="comment"> * $Log: f14bc__ctrl_8c-example.html,v $
-<span class="comment"> * Revision 1.9  2010/01/29 09:46:19  dpfeuffer
-<span class="comment"> * (AUTOCI) Checkin due to new revision 1.6 of fileset ART/13Y007-06/13Y007-06
-<span class="comment"> *</span>
-<span class="comment"> * Revision 1.2  2009/08/31 14:14:21  MRoth</span>
-<span class="comment"> * R: Porting to MDIS5</span>
-<span class="comment"> * M: added support for 64bit (MDIS_PATH)</span>
-<span class="comment"> *</span>
-<span class="comment"> * Revision 1.1  2006/11/08 09:45:44  DPfeuffer</span>
-<span class="comment"> * Initial Revision</span>
-<span class="comment"> *</span>
+ <span class="comment">/*</span>
 <span class="comment"> *---------------------------------------------------------------------------</span>
-<span class="comment"> * (c) Copyright 2006 by MEN mikro elektronik GmbH, Nuernberg, Germany</span>
+<span class="comment"> * Copyright (c) 2006-2019, MEN Mikro Elektronik GmbH</span>
 <span class="comment"> ****************************************************************************/</span>
+<span class="comment">/*</span>
+<span class="comment">* This program is free software: you can redistribute it and/or modify</span>
+<span class="comment">* it under the terms of the GNU General Public License as published by</span>
+<span class="comment">* the Free Software Foundation, either version 2 of the License, or</span>
+<span class="comment">* (at your option) any later version.</span>
+<span class="comment">*</span>
+<span class="comment">* This program is distributed in the hope that it will be useful,</span>
+<span class="comment">* but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="comment">* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<span class="comment">* GNU General Public License for more details.</span>
+<span class="comment">*</span>
+<span class="comment">* You should have received a copy of the GNU General Public License</span>
+<span class="comment">* along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<span class="comment">*/</span>
 
 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
 <span class="preprocessor">#include &lt;stdlib.h&gt;</span>
@@ -66,8 +68,8 @@
 <span class="keyword">static</span> <a class="code" href="f14bc__drv_8h.html#a22">MDIS_PATH</a>  G_Path;
 
 <span class="keyword">static</span> <span class="keyword">struct </span>{
-    u_int32 <a class="code" href="f14bc__ctrl_8c.html#a4">nom</a>;
-    u_int32 <a class="code" href="f14bc__ctrl_8c.html#a5">dev</a>;
+    int32   <a class="code" href="f14bc__ctrl_8c.html#a4">nom</a>;
+    int32   <a class="code" href="f14bc__ctrl_8c.html#a5">dev</a>;
 } G_VoltCh[<a class="code" href="f14bc__ctrl_8c.html#a2">MAX_VOLT_CH</a>];    <span class="comment">/* volt channel values */</span>
 
 <span class="comment">/*--------------------------------------+</span>
@@ -149,7 +151,7 @@
     <span class="comment">/*--------------------+</span>
 <span class="comment">    |  open path          |</span>
 <span class="comment">    +--------------------*/</span>
-    <span class="keywordflow">if</span>( (G_Path = <a name="a4"></a><a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a6">M_open</a>(device)) &lt; 0) {
+    <span class="keywordflow">if</span>( (G_Path = <a name="a4"></a><a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a4">M_open</a>(device)) &lt; 0) {
         <a class="code" href="f14bc__ctrl_8c.html#a8">PrintMdisError</a>(<span class="stringliteral">"open"</span>);
         <span class="keywordflow">return</span>(1);
     }
@@ -364,8 +366,8 @@
         <a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/structM__SG__BLOCK.html">M_SG_BLOCK</a>  blk;
         <span class="keywordtype">char</span>        rev[6];
 
-        blk.<a name="a7"></a><a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/structM__SG__BLOCK.html#m0">size</a> = <span class="keyword">sizeof</span>(rev);
-        blk.<a name="a8"></a><a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/structM__SG__BLOCK.html#m1">data</a> = (<span class="keywordtype">void</span>*)&amp;rev;
+        blk.<a name="a7"></a><a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/structM__SG__BLOCK.html#o0">size</a> = <span class="keyword">sizeof</span>(rev);
+        blk.<a name="a8"></a><a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/structM__SG__BLOCK.html#o1">data</a> = (<span class="keywordtype">void</span>*)&amp;rev;
 
         <span class="keywordflow">if</span> ((<a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a12">M_getstat</a>(G_Path, F14BC_BLK_FWREV, (int32*)&amp;blk)) &lt; 0) {
             <a class="code" href="f14bc__ctrl_8c.html#a8">PrintMdisError</a>(<span class="stringliteral">"getstat F14BC_BLK_FWREV"</span>);
@@ -384,7 +386,7 @@
         UOS_SigExit();
     }
 
-    <span class="keywordflow">if</span>( <a name="a9"></a><a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a7">M_close</a>(G_Path) &lt; 0 )
+    <span class="keywordflow">if</span>( <a name="a9"></a><a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a9">M_close</a>(G_Path) &lt; 0 )
         <a class="code" href="f14bc__ctrl_8c.html#a8">PrintMdisError</a>(<span class="stringliteral">"close"</span>);
 
     <span class="keywordflow">return</span>(0);
@@ -393,7 +395,7 @@
 <span class="comment">/********************************* PrintMdisError **************************/</span>
 <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="f14bc__ctrl_8c.html#a8">PrintMdisError</a>(<span class="keywordtype">char</span> *info)
 {
-    printf(<span class="stringliteral">"*** can't %s: %s\n"</span>, info, <a name="a10"></a><a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a14">M_errstring</a>(UOS_ErrnoGet()));
+    printf(<span class="stringliteral">"*** can't %s: %s\n"</span>, info, <a name="a10"></a><a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/m__errstr_8c.html#a0">M_errstring</a>(UOS_ErrnoGet()));
 }
 
 <span class="comment">/********************************* PrintUosError ***************************/</span>
@@ -410,9 +412,10 @@
 <!-- Footer -->
 	<p class="footer">
 	Generated for F14BC MDIS Driver using <a href="http://www.doxygen.org">doxygen</a>.<br>
-	Copyright &copy; 2008 <a href="http://www.men.de">MEN Mikro Elektronik GmbH</a>. All Rights Reserved.
+	Copyright &copy; 2019 <a href="http://www.men.de">MEN Mikro Elektronik GmbH</a>. All Rights Reserved.
 	</p>
 </div>
 
 </body>
 </html>
+
