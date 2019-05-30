@@ -5,7 +5,7 @@
 	<date>2010-01-29</date>
 	<revision>1.6</revision>
 	<docroot>DRIVERS/MDIS_LL/F14BC/DOC/html/index.html</docroot>
-	<!-- Models	-->
+	<!-- Models -->
 	<modellist>
 		<model>
 			<hwname>F14BC</hwname>
@@ -37,7 +37,7 @@
 			</settinglist>
 		</model>
 	</modellist>
-	<!-- Global	software modules -->
+	<!-- Global software modules -->
 	<swmodulelist>
 		<swmodule swap="false">
 			<name>f14bc</name>
