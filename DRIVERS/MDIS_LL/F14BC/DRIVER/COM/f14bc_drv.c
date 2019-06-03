@@ -3,8 +3,6 @@
  *        \file  f14bc_drv.c
  *
  *      \author  dieter.pfeuffer@men.de
- *        $Date: 2009/09/04 11:32:21 $
- *    $Revision: 1.4 $
  *
  *      \brief   Low-level driver for F14BC device on SMBus
  *
@@ -98,6 +96,8 @@ typedef struct {
 /* include files which need LL_HANDLE */
 #include <MEN/ll_entry.h>   /* low-level driver jump table  */
 #include <MEN/f14bc_drv.h>	/* F14BC driver header file */
+
+static const char IdentString[]=MENT_XSTR(MAK_REVISION);
 
 /*-----------------------------------------+
 |  PROTOTYPES                              |
@@ -1042,7 +1042,7 @@ static int32 F14BC_Info(
  */
 static char* Ident( void )
 {
-    return( "F14BC - F14BC low-level driver: $Id: f14bc_drv.c,v 1.4 2009/09/04 11:32:21 MRoth Exp $" );
+    return( (char*) IdentString );
 }
 
 /********************************* Cleanup *********************************/

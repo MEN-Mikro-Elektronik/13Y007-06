@@ -3,8 +3,6 @@
  *        \file  f14bc_drv.h
  *
  *      \author  dieter.pfeuffer@men.de
- *        $Date: 2009/08/31 14:14:25 $
- *    $Revision: 3.2 $
  *
  *       \brief  Header file for F14BC driver containing
  *               F14BC specific status codes and

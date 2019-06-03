@@ -3,8 +3,6 @@
  *        \file  f14bci.h
  *
  *      \author  dieter.pfeuffer@men.de
- *        $Date: 2007/12/03 17:53:42 $
- *    $Revision: 3.3 $
  * 
  *  	 \brief  Header file for F14 board-controller firmware interface
  *                      

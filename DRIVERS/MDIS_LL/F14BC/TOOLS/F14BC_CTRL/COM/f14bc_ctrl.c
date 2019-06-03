@@ -6,8 +6,6 @@
 /*!
  *         \file f14bc_ctrl.c
  *       \author dieter.pfeuffer@men.de
- *        $Date: 2009/08/31 14:14:21 $
- *    $Revision: 1.2 $
  *
  *        \brief Tool to control F14BC PIC
  *
@@ -41,6 +39,8 @@
 #include <MEN/mdis_api.h>
 #include <MEN/f14bc_drv.h>
 #include <MEN/f14bci.h>
+
+static const char IdentString[]=MENT_XSTR(MAK_REVISION);
 
 /*--------------------------------------+
 |   DEFINES                             |
@@ -83,7 +83,7 @@ static void usage(void)
 	printf("    -f           show firmware revision                    \n");
 	printf("Note: Only option -r supports PIC firmware with rev. < 2.0\n");
 	printf("\n");
-	printf("(c) 2006 by MEN mikro elektronik GmbH\n\n");
+	printf("Copyright (c) 2006-2019, MEN Mikro Elektronik GmbH\n%s\n", IdentString);
 }
 
 /********************************* main ************************************/

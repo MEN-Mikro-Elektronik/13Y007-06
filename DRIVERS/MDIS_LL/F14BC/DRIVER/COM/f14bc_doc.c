@@ -3,8 +3,6 @@
  *        \file  f14bc_doc.c
  *
  *      \author  dieter.pfeuffer@men.de
- *        $Date: 2009/08/31 14:14:19 $
- *    $Revision: 1.3 $
  *
  *      \brief   User documentation for F14BC device driver
  *
