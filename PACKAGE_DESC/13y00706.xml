@@ -2,8 +2,8 @@
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="packagedesc.xsd">
 	<name>13y00706</name>
 	<description>MDIS5 F14BC driver package</description>
-	<date>2010-01-29</date>
-	<revision>1.6</revision>
+	<date>2019-06-07</date>
+	<revision>13Y007-06_01_09-8-g3c75091</revision>
 	<docroot>DRIVERS/MDIS_LL/F14BC/DOC/html/index.html</docroot>
 	<!-- Models -->
 	<modellist>
