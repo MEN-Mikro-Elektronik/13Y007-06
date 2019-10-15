@@ -48,40 +48,40 @@
 <tr><td>&nbsp;</td><td><em class="mdesc">Debug handle.</em> <a href="#a7"></a><em></em><br><br></td></tr>
 <tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a8">SMB2_ERRMAP</a>(err)</td></tr>
 <tr><td colspan=2><br><h2>Functions</h2></td></tr>
-<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a9">F14BC_Init</a> (DESC_SPEC *descSpec, OSS_HANDLE *osHdl, MACCESS *ma, OSS_SEM_HANDLE *devSemHdl, OSS_IRQ_HANDLE *irqHdl, <a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> **llHdlP)</td></tr>
-<tr><td>&nbsp;</td><td><em class="mdesc">Allocate and return low-level handle, initialize hardware.</em> <a href="#a9"></a><em></em><br><br></td></tr>
-<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a10">F14BC_Exit</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> **llHdlP)</td></tr>
-<tr><td>&nbsp;</td><td><em class="mdesc">De-initialize hardware and clean up memory.</em> <a href="#a10"></a><em></em><br><br></td></tr>
-<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a11">F14BC_Read</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 ch, int32 *value)</td></tr>
-<tr><td>&nbsp;</td><td><em class="mdesc">Read a value from the device.</em> <a href="#a11"></a><em></em><br><br></td></tr>
-<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a12">F14BC_Write</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 ch, int32 value)</td></tr>
-<tr><td>&nbsp;</td><td><em class="mdesc">Write a value to the device.</em> <a href="#a12"></a><em></em><br><br></td></tr>
-<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a13">F14BC_SetStat</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 ch, int32 code, INT32_OR_64 value32_or_64)</td></tr>
-<tr><td>&nbsp;</td><td><em class="mdesc">Set the driver status.</em> <a href="#a13"></a><em></em><br><br></td></tr>
-<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a14">F14BC_GetStat</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 ch, int32 code, INT32_OR_64 *value32_or_64P)</td></tr>
-<tr><td>&nbsp;</td><td><em class="mdesc">Get the driver status.</em> <a href="#a14"></a><em></em><br><br></td></tr>
-<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a15">F14BC_BlockRead</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 ch, void *buf, int32 size, int32 *nbrRdBytesP)</td></tr>
-<tr><td>&nbsp;</td><td><em class="mdesc">Read a data block from the device.</em> <a href="#a15"></a><em></em><br><br></td></tr>
-<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a16">F14BC_BlockWrite</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 ch, void *buf, int32 size, int32 *nbrWrBytesP)</td></tr>
-<tr><td>&nbsp;</td><td><em class="mdesc">Write a data block from the device.</em> <a href="#a16"></a><em></em><br><br></td></tr>
-<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a17">F14BC_Irq</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl)</td></tr>
-<tr><td>&nbsp;</td><td><em class="mdesc">Interrupt service routine - unused.</em> <a href="#a17"></a><em></em><br><br></td></tr>
-<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a18">F14BC_Info</a> (int32 infoType,...)</td></tr>
-<tr><td>&nbsp;</td><td><em class="mdesc">Get information about hardware and driver requirements.</em> <a href="#a18"></a><em></em><br><br></td></tr>
-<tr><td nowrap align=right valign=top>char *&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a19">Ident</a> (void)</td></tr>
-<tr><td>&nbsp;</td><td><em class="mdesc">Return ident string.</em> <a href="#a19"></a><em></em><br><br></td></tr>
-<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a20">Cleanup</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 retCode)</td></tr>
-<tr><td>&nbsp;</td><td><em class="mdesc">Close all handles, free memory and return error code.</em> <a href="#a20"></a><em></em><br><br></td></tr>
-<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a21">AlarmHandler</a> (void *arg)</td></tr>
-<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a22">__F14BC_GetEntry</a> (LL_ENTRY *drvP)</td></tr>
-<tr><td>&nbsp;</td><td><em class="mdesc">Initialize driver's jump table.</em> <a href="#a22"></a><em></em><br><br></td></tr>
+<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a10">F14BC_Init</a> (DESC_SPEC *descSpec, OSS_HANDLE *osHdl, MACCESS *ma, OSS_SEM_HANDLE *devSemHdl, OSS_IRQ_HANDLE *irqHdl, <a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> **llHdlP)</td></tr>
+<tr><td>&nbsp;</td><td><em class="mdesc">Allocate and return low-level handle, initialize hardware.</em> <a href="#a10"></a><em></em><br><br></td></tr>
+<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a11">F14BC_Exit</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> **llHdlP)</td></tr>
+<tr><td>&nbsp;</td><td><em class="mdesc">De-initialize hardware and clean up memory.</em> <a href="#a11"></a><em></em><br><br></td></tr>
+<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a12">F14BC_Read</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 ch, int32 *value)</td></tr>
+<tr><td>&nbsp;</td><td><em class="mdesc">Read a value from the device.</em> <a href="#a12"></a><em></em><br><br></td></tr>
+<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a13">F14BC_Write</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 ch, int32 value)</td></tr>
+<tr><td>&nbsp;</td><td><em class="mdesc">Write a value to the device.</em> <a href="#a13"></a><em></em><br><br></td></tr>
+<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a14">F14BC_SetStat</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 ch, int32 code, INT32_OR_64 value32_or_64)</td></tr>
+<tr><td>&nbsp;</td><td><em class="mdesc">Set the driver status.</em> <a href="#a14"></a><em></em><br><br></td></tr>
+<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a15">F14BC_GetStat</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 ch, int32 code, INT32_OR_64 *value32_or_64P)</td></tr>
+<tr><td>&nbsp;</td><td><em class="mdesc">Get the driver status.</em> <a href="#a15"></a><em></em><br><br></td></tr>
+<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a16">F14BC_BlockRead</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 ch, void *buf, int32 size, int32 *nbrRdBytesP)</td></tr>
+<tr><td>&nbsp;</td><td><em class="mdesc">Read a data block from the device.</em> <a href="#a16"></a><em></em><br><br></td></tr>
+<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a17">F14BC_BlockWrite</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 ch, void *buf, int32 size, int32 *nbrWrBytesP)</td></tr>
+<tr><td>&nbsp;</td><td><em class="mdesc">Write a data block from the device.</em> <a href="#a17"></a><em></em><br><br></td></tr>
+<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a18">F14BC_Irq</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl)</td></tr>
+<tr><td>&nbsp;</td><td><em class="mdesc">Interrupt service routine - unused.</em> <a href="#a18"></a><em></em><br><br></td></tr>
+<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a19">F14BC_Info</a> (int32 infoType,...)</td></tr>
+<tr><td>&nbsp;</td><td><em class="mdesc">Get information about hardware and driver requirements.</em> <a href="#a19"></a><em></em><br><br></td></tr>
+<tr><td nowrap align=right valign=top>char *&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a20">Ident</a> (void)</td></tr>
+<tr><td>&nbsp;</td><td><em class="mdesc">Return ident string.</em> <a href="#a20"></a><em></em><br><br></td></tr>
+<tr><td nowrap align=right valign=top>int32&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a21">Cleanup</a> (<a class="el" href="structLL__HANDLE.html">LL_HANDLE</a> *llHdl, int32 retCode)</td></tr>
+<tr><td>&nbsp;</td><td><em class="mdesc">Close all handles, free memory and return error code.</em> <a href="#a21"></a><em></em><br><br></td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a22">AlarmHandler</a> (void *arg)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a23">__F14BC_GetEntry</a> (LL_ENTRY *drvP)</td></tr>
+<tr><td>&nbsp;</td><td><em class="mdesc">Initialize driver's jump table.</em> <a href="#a23"></a><em></em><br><br></td></tr>
+<tr><td colspan=2><br><h2>Variables</h2></td></tr>
+<tr><td nowrap align=right valign=top>const char&nbsp;</td><td valign=bottom><a class="el" href="f14bc__drv_8c.html#a9">IdentString</a> [] = MENT_XSTR(MAK_REVISION)</td></tr>
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 Low-level driver for F14BC device on SMBus.
 <p>
-<dl compact><dt><b>Author:</b></dt><dd><a href="mailto:dieter.pfeuffer@men.de">dieter.pfeuffer@men.de</a> <dl compact><dt><b>Date</b></dt><dd>2009/09/04 11:32:21 </dd></dl>
-<dl compact><dt><b>Revision</b></dt><dd>1.4 </dd></dl>
-</dd></dl>
+<dl compact><dt><b>Author:</b></dt><dd><a href="mailto:dieter.pfeuffer@men.de">dieter.pfeuffer@men.de</a></dd></dl>
 <p>
 Required: OSS, DESC, DBG, libraries<p>
 <dl compact><dt><b>Preprocessor Switches:</b></dt><dd>_ONE_NAMESPACE_PER_DRIVER_, F14BC_SW</dd></dl>
@@ -306,7 +306,7 @@ Interrupt required.
   </tr>
 </table>
 <hr><h2>Function Documentation</h2>
-<a name="a22" doxytag="f14bc_drv.c::__F14BC_GetEntry"></a><p>
+<a name="a23" doxytag="f14bc_drv.c::__F14BC_GetEntry"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -342,7 +342,7 @@ Initialize driver's jump table.
     </td>
   </tr>
 </table>
-<a name="a21" doxytag="f14bc_drv.c::AlarmHandler"></a><p>
+<a name="a22" doxytag="f14bc_drv.c::AlarmHandler"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -371,7 +371,7 @@ Initialize driver's jump table.
     </td>
   </tr>
 </table>
-<a name="a20" doxytag="f14bc_drv.c::Cleanup"></a><p>
+<a name="a21" doxytag="f14bc_drv.c::Cleanup"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -419,7 +419,7 @@ Close all handles, free memory and return error code.
     </td>
   </tr>
 </table>
-<a name="a15" doxytag="f14bc_drv.c::F14BC_BlockRead"></a><p>
+<a name="a16" doxytag="f14bc_drv.c::F14BC_BlockRead"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -488,7 +488,7 @@ The function is not supported and always returns an ERR_LL_ILL_FUNC error.<p>
     </td>
   </tr>
 </table>
-<a name="a16" doxytag="f14bc_drv.c::F14BC_BlockWrite"></a><p>
+<a name="a17" doxytag="f14bc_drv.c::F14BC_BlockWrite"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -557,7 +557,7 @@ The function is not supported and always returns an ERR_LL_ILL_FUNC error.<p>
     </td>
   </tr>
 </table>
-<a name="a10" doxytag="f14bc_drv.c::F14BC_Exit"></a><p>
+<a name="a11" doxytag="f14bc_drv.c::F14BC_Exit"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -595,7 +595,7 @@ The function deinitializes the F14BC device.<p>
     </td>
   </tr>
 </table>
-<a name="a14" doxytag="f14bc_drv.c::F14BC_GetStat"></a><p>
+<a name="a15" doxytag="f14bc_drv.c::F14BC_GetStat"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -658,7 +658,7 @@ The driver supports <a class="el" href="f14bc__drv_8h.html#getstat_setstat_codes
     </td>
   </tr>
 </table>
-<a name="a18" doxytag="f14bc_drv.c::F14BC_Info"></a><p>
+<a name="a19" doxytag="f14bc_drv.c::F14BC_Info"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -719,7 +719,7 @@ The LL_INFO_LOCKMODE code returns which process locking mode the driver needs (L
     </td>
   </tr>
 </table>
-<a name="a9" doxytag="f14bc_drv.c::F14BC_Init"></a><p>
+<a name="a10" doxytag="f14bc_drv.c::F14BC_Init"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -796,7 +796,7 @@ The function decodes <a class="el" href="index.html#descriptor_entries">these de
     </td>
   </tr>
 </table>
-<a name="a17" doxytag="f14bc_drv.c::F14BC_Irq"></a><p>
+<a name="a18" doxytag="f14bc_drv.c::F14BC_Irq"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -834,7 +834,7 @@ If the driver can detect the interrupt's cause it returns LL_IRQ_DEVICE or LL_IR
     </td>
   </tr>
 </table>
-<a name="a11" doxytag="f14bc_drv.c::F14BC_Read"></a><p>
+<a name="a12" doxytag="f14bc_drv.c::F14BC_Read"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -889,7 +889,7 @@ The function is not supported and always returns an ERR_LL_ILL_FUNC error.<p>
     </td>
   </tr>
 </table>
-<a name="a13" doxytag="f14bc_drv.c::F14BC_SetStat"></a><p>
+<a name="a14" doxytag="f14bc_drv.c::F14BC_SetStat"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -951,7 +951,7 @@ The driver supports <a class="el" href="f14bc__drv_8h.html#getstat_setstat_codes
     </td>
   </tr>
 </table>
-<a name="a12" doxytag="f14bc_drv.c::F14BC_Write"></a><p>
+<a name="a13" doxytag="f14bc_drv.c::F14BC_Write"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -1006,7 +1006,7 @@ The function is not supported and always returns an ERR_LL_ILL_FUNC error.<p>
     </td>
   </tr>
 </table>
-<a name="a19" doxytag="f14bc_drv.c::Ident"></a><p>
+<a name="a20" doxytag="f14bc_drv.c::Ident"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
     <td class="md">
@@ -1038,6 +1038,29 @@ Return ident string.
     </td>
   </tr>
 </table>
+<hr><h2>Variable Documentation</h2>
+<a name="a9" doxytag="f14bc_drv.c::IdentString"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> const char IdentString[] = MENT_XSTR(MAK_REVISION)<code> [static]</code>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
 
 	</div>
 </div>
@@ -1045,8 +1068,7 @@ Return ident string.
 <div class="footer">
 <!-- Footer -->
 	<p class="footer">
-	Generated for F14BC MDIS Driver using <a href="http://www.doxygen.org">doxygen</a>.<br>
-	Copyright &copy; 2019 <a href="http://www.men.de">MEN Mikro Elektronik GmbH</a>. All Rights Reserved.
+	Generated for F14BC MDIS Driver using <a href="http://www.doxygen.org">doxygen</a>. All Rights Reserved.
 	</p>
 </div>
 

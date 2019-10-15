@@ -55,6 +55,8 @@
 <span class="preprocessor">#include &lt;<a class="code" href="f14bc__drv_8h.html">MEN/f14bc_drv.h</a>&gt;</span>
 <span class="preprocessor">#include &lt;MEN/f14bci.h&gt;</span>
 
+<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> IdentString[]=MENT_XSTR(MAK_REVISION);
+
 <span class="comment">/*--------------------------------------+</span>
 <span class="comment">|   DEFINES                             |</span>
 <span class="comment">+--------------------------------------*/</span>
@@ -68,19 +70,19 @@
 <span class="keyword">static</span> <a class="code" href="f14bc__drv_8h.html#a22">MDIS_PATH</a>  G_Path;
 
 <span class="keyword">static</span> <span class="keyword">struct </span>{
-    int32   <a class="code" href="f14bc__ctrl_8c.html#a4">nom</a>;
-    int32   <a class="code" href="f14bc__ctrl_8c.html#a5">dev</a>;
+    int32   <a class="code" href="f14bc__ctrl_8c.html#a5">nom</a>;
+    int32   <a class="code" href="f14bc__ctrl_8c.html#a6">dev</a>;
 } G_VoltCh[<a class="code" href="f14bc__ctrl_8c.html#a2">MAX_VOLT_CH</a>];    <span class="comment">/* volt channel values */</span>
 
 <span class="comment">/*--------------------------------------+</span>
 <span class="comment">|   PROTOTYPES                          |</span>
 <span class="comment">+--------------------------------------*/</span>
-<span class="keyword">static</span> <span class="keywordtype">void</span> <a name="a0"></a><a class="code" href="f14bc__ctrl_8c.html#a7">usage</a>(<span class="keywordtype">void</span>);
-<span class="keyword">static</span> <span class="keywordtype">void</span> <a name="a1"></a><a class="code" href="f14bc__ctrl_8c.html#a8">PrintMdisError</a>(<span class="keywordtype">char</span> *info);
-<span class="keyword">static</span> <span class="keywordtype">void</span> <a name="a2"></a><a class="code" href="f14bc__ctrl_8c.html#a9">PrintUosError</a>(<span class="keywordtype">char</span> *info);
+<span class="keyword">static</span> <span class="keywordtype">void</span> <a name="a0"></a><a class="code" href="f14bc__ctrl_8c.html#a8">usage</a>(<span class="keywordtype">void</span>);
+<span class="keyword">static</span> <span class="keywordtype">void</span> <a name="a1"></a><a class="code" href="f14bc__ctrl_8c.html#a9">PrintMdisError</a>(<span class="keywordtype">char</span> *info);
+<span class="keyword">static</span> <span class="keywordtype">void</span> <a name="a2"></a><a class="code" href="f14bc__ctrl_8c.html#a10">PrintUosError</a>(<span class="keywordtype">char</span> *info);
 
 <span class="comment">/********************************* usage ***********************************/</span>
-<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="f14bc__ctrl_8c.html#a7">usage</a>(<span class="keywordtype">void</span>)
+<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="f14bc__ctrl_8c.html#a8">usage</a>(<span class="keywordtype">void</span>)
 {
     printf(<span class="stringliteral">"Usage: f14bc_ctrl [&lt;opts&gt;] &lt;device&gt; [&lt;opts&gt;]\n"</span>);
     printf(<span class="stringliteral">"Function: Control F14BC PIC\n"</span>);
@@ -94,11 +96,11 @@
     printf(<span class="stringliteral">"    -f           show firmware revision                    \n"</span>);
     printf(<span class="stringliteral">"Note: Only option -r supports PIC firmware with rev. &lt; 2.0\n"</span>);
     printf(<span class="stringliteral">"\n"</span>);
-    printf(<span class="stringliteral">"(c) 2006 by MEN mikro elektronik GmbH\n\n"</span>);
+    printf(<span class="stringliteral">"Copyright (c) 2006-2019, MEN Mikro Elektronik GmbH\n%s\n"</span>, IdentString);
 }
 
 <span class="comment">/********************************* main ************************************/</span>
-<span class="keywordtype">int</span> <a name="a3"></a><a class="code" href="f14bc__ctrl_8c.html#a10">main</a>( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])
+<span class="keywordtype">int</span> <a name="a3"></a><a class="code" href="f14bc__ctrl_8c.html#a11">main</a>( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])
 {
     <span class="keywordtype">char</span>    *device,*str,*errstr,buf[40];
     int32   volt, superv, swr, err, clear, frev;
@@ -114,7 +116,7 @@
     }
 
     <span class="keywordflow">if</span>( UTL_TSTOPT(<span class="stringliteral">"?"</span>) ){                      <span class="comment">/* help requested ? */</span>
-        <a class="code" href="f14bc__ctrl_8c.html#a7">usage</a>();
+        <a class="code" href="f14bc__ctrl_8c.html#a8">usage</a>();
         <span class="keywordflow">return</span>(1);
     }
 
@@ -128,7 +130,7 @@
         }
 
     <span class="keywordflow">if</span>( !device || argc&lt;3 ) {
-        <a class="code" href="f14bc__ctrl_8c.html#a7">usage</a>();
+        <a class="code" href="f14bc__ctrl_8c.html#a8">usage</a>();
         <span class="keywordflow">return</span>(1);
     }
 
@@ -152,7 +154,7 @@
 <span class="comment">    |  open path          |</span>
 <span class="comment">    +--------------------*/</span>
     <span class="keywordflow">if</span>( (G_Path = <a name="a4"></a><a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a4">M_open</a>(device)) &lt; 0) {
-        <a class="code" href="f14bc__ctrl_8c.html#a8">PrintMdisError</a>(<span class="stringliteral">"open"</span>);
+        <a class="code" href="f14bc__ctrl_8c.html#a9">PrintMdisError</a>(<span class="stringliteral">"open"</span>);
         <span class="keywordflow">return</span>(1);
     }
 
@@ -163,7 +165,7 @@
         printf(<span class="stringliteral">"ch   in[mV]   nominal[mV]   deviation(range)[mV]\n"</span>);
 
         <span class="keywordflow">if</span> ((<a name="a5"></a><a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a12">M_getstat</a>(G_Path, M_LL_CH_NUMBER, &amp;chNbr)) &lt; 0) {
-            <a class="code" href="f14bc__ctrl_8c.html#a8">PrintMdisError</a>(<span class="stringliteral">"getstat M_LL_CH_NUMBER"</span>);
+            <a class="code" href="f14bc__ctrl_8c.html#a9">PrintMdisError</a>(<span class="stringliteral">"getstat M_LL_CH_NUMBER"</span>);
             <span class="keywordflow">goto</span> abort;
         }
 
@@ -177,25 +179,25 @@
 
             <span class="comment">/* select channel */</span>
             <span class="keywordflow">if</span>( (<a name="a6"></a><a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a13">M_setstat</a>(G_Path, M_MK_CH_CURRENT, ch)) &lt; 0) {
-                <a class="code" href="f14bc__ctrl_8c.html#a8">PrintMdisError</a>(<span class="stringliteral">"setstat M_MK_CH_CURRENT"</span>);
+                <a class="code" href="f14bc__ctrl_8c.html#a9">PrintMdisError</a>(<span class="stringliteral">"setstat M_MK_CH_CURRENT"</span>);
                 <span class="keywordflow">goto</span> abort;
             }
 
             <span class="comment">/* get in voltage */</span>
             <span class="keywordflow">if</span> ((<a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a12">M_getstat</a>(G_Path, F14BC_VOLT_IN, &amp;in)) &lt; 0) {
-                <a class="code" href="f14bc__ctrl_8c.html#a8">PrintMdisError</a>(<span class="stringliteral">"getstat F14BC_VOLT_IN"</span>);
+                <a class="code" href="f14bc__ctrl_8c.html#a9">PrintMdisError</a>(<span class="stringliteral">"getstat F14BC_VOLT_IN"</span>);
                 <span class="keywordflow">goto</span> abort;
             }
 
             <span class="comment">/* get nominal voltage */</span>
             <span class="keywordflow">if</span> ((<a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a12">M_getstat</a>(G_Path, F14BC_VOLT_NOM, &amp;G_VoltCh[ch].nom)) &lt; 0) {
-                <a class="code" href="f14bc__ctrl_8c.html#a8">PrintMdisError</a>(<span class="stringliteral">"getstat F14BC_VOLT_NOM"</span>);
+                <a class="code" href="f14bc__ctrl_8c.html#a9">PrintMdisError</a>(<span class="stringliteral">"getstat F14BC_VOLT_NOM"</span>);
                 <span class="keywordflow">goto</span> abort;
             }
 
             <span class="comment">/* get deviation voltage */</span>
             <span class="keywordflow">if</span> ((<a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a12">M_getstat</a>(G_Path, F14BC_VOLT_DEV, &amp;G_VoltCh[ch].dev)) &lt; 0) {
-                <a class="code" href="f14bc__ctrl_8c.html#a8">PrintMdisError</a>(<span class="stringliteral">"getstat F14BC_VOLT_DEV"</span>);
+                <a class="code" href="f14bc__ctrl_8c.html#a9">PrintMdisError</a>(<span class="stringliteral">"getstat F14BC_VOLT_DEV"</span>);
                 <span class="keywordflow">goto</span> abort;
             }
 
@@ -230,13 +232,13 @@
 
         <span class="comment">/* init signal handling */</span>
         <span class="keywordflow">if</span>( UOS_SigInit(NULL) ){
-            <a class="code" href="f14bc__ctrl_8c.html#a9">PrintUosError</a>(<span class="stringliteral">"SigInit"</span>);
+            <a class="code" href="f14bc__ctrl_8c.html#a10">PrintUosError</a>(<span class="stringliteral">"SigInit"</span>);
             <span class="keywordflow">return</span>(1);
         }
 
         <span class="comment">/* install signal */</span>
         <span class="keywordflow">if</span>( UOS_SigInstall(UOS_SIG_USR1) ){
-            <a class="code" href="f14bc__ctrl_8c.html#a9">PrintUosError</a>(<span class="stringliteral">"SigInstall"</span>);
+            <a class="code" href="f14bc__ctrl_8c.html#a10">PrintUosError</a>(<span class="stringliteral">"SigInstall"</span>);
             <span class="keywordflow">goto</span> abort;
         }
 
@@ -244,7 +246,7 @@
 
         <span class="comment">/* install signal for voltage supervision */</span>
         <span class="keywordflow">if</span>( (<a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a13">M_setstat</a>(G_Path, F14BC_VOLT_SIGSET, (int32)UOS_SIG_USR1) &lt; 0)) {
-            <a class="code" href="f14bc__ctrl_8c.html#a8">PrintMdisError</a>(<span class="stringliteral">"setstat F14BC_VOLT_SIGSET"</span>);
+            <a class="code" href="f14bc__ctrl_8c.html#a9">PrintMdisError</a>(<span class="stringliteral">"setstat F14BC_VOLT_SIGSET"</span>);
             <span class="keywordflow">goto</span> abort;
         }
 
@@ -258,7 +260,7 @@
 
                 <span class="comment">/* get last supervision error state */</span>
                 <span class="keywordflow">if</span> ((<a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a12">M_getstat</a>(G_Path, F14BC_VOLT_SVSTATE, &amp;lastSvState)) &lt; 0) {
-                    <a class="code" href="f14bc__ctrl_8c.html#a8">PrintMdisError</a>(<span class="stringliteral">"getstat F14BC_VOLT_SVSTATE"</span>);
+                    <a class="code" href="f14bc__ctrl_8c.html#a9">PrintMdisError</a>(<span class="stringliteral">"getstat F14BC_VOLT_SVSTATE"</span>);
                     <span class="keywordflow">goto</span> abort;
                 }
 
@@ -286,7 +288,7 @@
     <span class="comment">/* set shutdown delay */</span>
     <span class="keywordflow">if</span>( swr != <a class="code" href="f14bc__ctrl_8c.html#a0">NONE</a> ){
         <span class="keywordflow">if</span>( (<a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a13">M_setstat</a>(G_Path, F14BC_SWRESET, swr)) &lt; 0) {
-            <a class="code" href="f14bc__ctrl_8c.html#a8">PrintMdisError</a>(<span class="stringliteral">"setstat F14BC_SWRESET"</span>);
+            <a class="code" href="f14bc__ctrl_8c.html#a9">PrintMdisError</a>(<span class="stringliteral">"setstat F14BC_SWRESET"</span>);
             <span class="keywordflow">goto</span> abort;
         }
     }
@@ -299,49 +301,49 @@
 
         <span class="comment">/* watchdog reset */</span>
         <span class="keywordflow">if</span> ((<a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a12">M_getstat</a>(G_Path, F14BC_ERRCNT_WDOG, &amp;val)) &lt; 0) {
-            <a class="code" href="f14bc__ctrl_8c.html#a8">PrintMdisError</a>(<span class="stringliteral">"getstat F14BC_ERRCNT_WDOG"</span>);
+            <a class="code" href="f14bc__ctrl_8c.html#a9">PrintMdisError</a>(<span class="stringliteral">"getstat F14BC_ERRCNT_WDOG"</span>);
             <span class="keywordflow">goto</span> abort;
         }
         printf(<span class="stringliteral">"- watchdog reset                : 0x%02x\n"</span>, (u_int8)val );
 
         <span class="comment">/* no BIOS start state 1 */</span>
         <span class="keywordflow">if</span> ((<a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a12">M_getstat</a>(G_Path, F14BC_ERRCNT_BIOS_1, &amp;val)) &lt; 0) {
-            <a class="code" href="f14bc__ctrl_8c.html#a8">PrintMdisError</a>(<span class="stringliteral">"getstat F14BC_ERRCNT_BIOS_1"</span>);
+            <a class="code" href="f14bc__ctrl_8c.html#a9">PrintMdisError</a>(<span class="stringliteral">"getstat F14BC_ERRCNT_BIOS_1"</span>);
             <span class="keywordflow">goto</span> abort;
         }
         printf(<span class="stringliteral">"- no BIOS start state 1         : 0x%02x\n"</span>, (u_int8)val );
 
         <span class="comment">/* no BIOS start state 2 */</span>
         <span class="keywordflow">if</span> ((<a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a12">M_getstat</a>(G_Path, F14BC_ERRCNT_BIOS_2, &amp;val)) &lt; 0) {
-            <a class="code" href="f14bc__ctrl_8c.html#a8">PrintMdisError</a>(<span class="stringliteral">"getstat F14BC_ERRCNT_BIOS_2"</span>);
+            <a class="code" href="f14bc__ctrl_8c.html#a9">PrintMdisError</a>(<span class="stringliteral">"getstat F14BC_ERRCNT_BIOS_2"</span>);
             <span class="keywordflow">goto</span> abort;
         }
         printf(<span class="stringliteral">"- no BIOS start state 2         : 0x%02x\n"</span>, (u_int8)val );
 
         <span class="comment">/* signal SLP_S5 not high */</span>
         <span class="keywordflow">if</span> ((<a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a12">M_getstat</a>(G_Path, F14BC_ERRCNT_SLP_S5, &amp;val)) &lt; 0) {
-            <a class="code" href="f14bc__ctrl_8c.html#a8">PrintMdisError</a>(<span class="stringliteral">"getstat F14BC_ERRCNT_SLP_S5"</span>);
+            <a class="code" href="f14bc__ctrl_8c.html#a9">PrintMdisError</a>(<span class="stringliteral">"getstat F14BC_ERRCNT_SLP_S5"</span>);
             <span class="keywordflow">goto</span> abort;
         }
         printf(<span class="stringliteral">"- signal SLP_S5 not high        : 0x%02x\n"</span>, (u_int8)val );
 
         <span class="comment">/* signal PLT_RST not deasserted */</span>
         <span class="keywordflow">if</span> ((<a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a12">M_getstat</a>(G_Path, F14BC_ERRCNT_RST, &amp;val)) &lt; 0) {
-            <a class="code" href="f14bc__ctrl_8c.html#a8">PrintMdisError</a>(<span class="stringliteral">"getstat F14BC_ERRCNT_RST"</span>);
+            <a class="code" href="f14bc__ctrl_8c.html#a9">PrintMdisError</a>(<span class="stringliteral">"getstat F14BC_ERRCNT_RST"</span>);
             <span class="keywordflow">goto</span> abort;
         }
         printf(<span class="stringliteral">"- signal PLT_RST not deasserted : 0x%02x\n"</span>, (u_int8)val );
 
         <span class="comment">/* temperature emergency cutout */</span>
         <span class="keywordflow">if</span> ((<a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a12">M_getstat</a>(G_Path, F14BC_ERRCNT_TEMP, &amp;val)) &lt; 0) {
-            <a class="code" href="f14bc__ctrl_8c.html#a8">PrintMdisError</a>(<span class="stringliteral">"getstat F14BC_ERRCNT_TEMP"</span>);
+            <a class="code" href="f14bc__ctrl_8c.html#a9">PrintMdisError</a>(<span class="stringliteral">"getstat F14BC_ERRCNT_TEMP"</span>);
             <span class="keywordflow">goto</span> abort;
         }
         printf(<span class="stringliteral">"- temperature emergency cutout  : 0x%02x\n"</span>, (u_int8)val );
 
         <span class="comment">/* processor hot */</span>
         <span class="keywordflow">if</span> ((<a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a12">M_getstat</a>(G_Path, F14BC_ERRCNT_PROCHOT, &amp;val)) &lt; 0) {
-            <a class="code" href="f14bc__ctrl_8c.html#a8">PrintMdisError</a>(<span class="stringliteral">"getstat F14BC_ERRCNT_PROCHOT"</span>);
+            <a class="code" href="f14bc__ctrl_8c.html#a9">PrintMdisError</a>(<span class="stringliteral">"getstat F14BC_ERRCNT_PROCHOT"</span>);
             <span class="keywordflow">goto</span> abort;
         }
         printf(<span class="stringliteral">"- processor hot                 : 0x%02x\n"</span>, (u_int8)val );
@@ -353,7 +355,7 @@
     <span class="keywordflow">if</span>( clear != <a class="code" href="f14bc__ctrl_8c.html#a0">NONE</a> ){
         printf(<span class="stringliteral">"clearing error counters\n"</span>);
         <span class="keywordflow">if</span>( (<a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a13">M_setstat</a>(G_Path, F14BC_ERRCNT_CLR, 0)) &lt; 0) {
-            <a class="code" href="f14bc__ctrl_8c.html#a8">PrintMdisError</a>(<span class="stringliteral">"setstat F14BC_ERRCNT_CLR"</span>);
+            <a class="code" href="f14bc__ctrl_8c.html#a9">PrintMdisError</a>(<span class="stringliteral">"setstat F14BC_ERRCNT_CLR"</span>);
             <span class="keywordflow">goto</span> abort;
         }
     }
@@ -370,7 +372,7 @@
         blk.<a name="a8"></a><a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/structM__SG__BLOCK.html#o1">data</a> = (<span class="keywordtype">void</span>*)&amp;rev;
 
         <span class="keywordflow">if</span> ((<a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a12">M_getstat</a>(G_Path, F14BC_BLK_FWREV, (int32*)&amp;blk)) &lt; 0) {
-            <a class="code" href="f14bc__ctrl_8c.html#a8">PrintMdisError</a>(<span class="stringliteral">"getstat F14BC_BLK_FWREV"</span>);
+            <a class="code" href="f14bc__ctrl_8c.html#a9">PrintMdisError</a>(<span class="stringliteral">"getstat F14BC_BLK_FWREV"</span>);
             <span class="keywordflow">goto</span> abort;
         }
         printf(<span class="stringliteral">"firmware rev.: %c%c.%c%c.%c%c\n"</span>,
@@ -387,19 +389,19 @@
     }
 
     <span class="keywordflow">if</span>( <a name="a9"></a><a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/mdis__api_8c.html#a9">M_close</a>(G_Path) &lt; 0 )
-        <a class="code" href="f14bc__ctrl_8c.html#a8">PrintMdisError</a>(<span class="stringliteral">"close"</span>);
+        <a class="code" href="f14bc__ctrl_8c.html#a9">PrintMdisError</a>(<span class="stringliteral">"close"</span>);
 
     <span class="keywordflow">return</span>(0);
 }
 
 <span class="comment">/********************************* PrintMdisError **************************/</span>
-<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="f14bc__ctrl_8c.html#a8">PrintMdisError</a>(<span class="keywordtype">char</span> *info)
+<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="f14bc__ctrl_8c.html#a9">PrintMdisError</a>(<span class="keywordtype">char</span> *info)
 {
     printf(<span class="stringliteral">"*** can't %s: %s\n"</span>, info, <a name="a10"></a><a class="codeRef" doxygen="mdis_api.tag:../../../../../LIBSRC/MDIS_API/DOC/html/" href="../../../../../LIBSRC/MDIS_API/DOC/html/m__errstr_8c.html#a0">M_errstring</a>(UOS_ErrnoGet()));
 }
 
 <span class="comment">/********************************* PrintUosError ***************************/</span>
-<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="f14bc__ctrl_8c.html#a9">PrintUosError</a>(<span class="keywordtype">char</span> *info)
+<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="f14bc__ctrl_8c.html#a10">PrintUosError</a>(<span class="keywordtype">char</span> *info)
 {
     printf(<span class="stringliteral">"*** can't %s: %s\n"</span>, info, UOS_ErrString(UOS_ErrnoGet()));
 }
@@ -411,8 +413,7 @@
 <div class="footer">
 <!-- Footer -->
 	<p class="footer">
-	Generated for F14BC MDIS Driver using <a href="http://www.doxygen.org">doxygen</a>.<br>
-	Copyright &copy; 2019 <a href="http://www.men.de">MEN Mikro Elektronik GmbH</a>. All Rights Reserved.
+	Generated for F14BC MDIS Driver using <a href="http://www.doxygen.org">doxygen</a>. All Rights Reserved.
 	</p>
 </div>
 
