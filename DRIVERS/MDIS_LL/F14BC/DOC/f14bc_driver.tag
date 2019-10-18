@@ -5,7 +5,6 @@
     <title></title>
     <name>index</name>
     <docanchor>codes</docanchor>
-    <docanchor>f14bc_min</docanchor>
     <docanchor>Variants</docanchor>
     <docanchor>wdog_simp</docanchor>
     <docanchor>wdog_test</docanchor>
@@ -14,7 +13,6 @@
     <docanchor>programs</docanchor>
     <docanchor>api_functions</docanchor>
     <docanchor>FuncDesc</docanchor>
-    <docanchor>f14bc_max</docanchor>
     <docanchor>channels</docanchor>
     <docanchor>descriptor_entries</docanchor>
   </compound>

@@ -23,8 +23,6 @@
 <LI><OBJECT type="text/sitemap"><param name="Name" value="Examples"><param name="Local" value="examples.html"><param name="ImageNumber" value="1"></OBJECT>
   <UL>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="f14bc_ctrl.c"><param name="Local" value="f14bc__ctrl_8c-example.html"><param name="ImageNumber" value="11"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Name" value="f14bc_max.dsc"><param name="Local" value="f14bc__max_8dsc-example.html"><param name="ImageNumber" value="11"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Name" value="f14bc_min.dsc"><param name="Local" value="f14bc__min_8dsc-example.html"><param name="ImageNumber" value="11"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="wdog_simp.c"><param name="Local" value="wdog__simp_8c-example.html"><param name="ImageNumber" value="11"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="wdog_test.c"><param name="Local" value="wdog__test_8c-example.html"><param name="ImageNumber" value="11"></OBJECT>
   </UL>
