@@ -121,14 +121,6 @@
     </tr>
     </table>
 
-    \n \subsection f14bc_min   Minimum descriptor
-    f14bc_min.dsc (see Examples section)\n
-    Demonstrates the minimum set of options necessary for using the driver.
-
-    \n \subsection f14bc_max   Maximum descriptor
-    f14bc_max.dsc (see Examples section)\n
-    Shows all possible configuration options for this driver.
-
     \n \section codes F14BC specific Getstat/Setstat codes
 	For the watchdog functionality, the driver supports a subset of the WDOG
 	Getstat/Setstat codes (defined in wdog.h):
@@ -158,8 +150,6 @@
 /** \example f14bc_ctrl.c */
 /** \example wdog_test.c */
 /** \example wdog_simp.c */
-/** \example f14bc_min.dsc */
-/** \example f14bc_max.dsc */
 
 /*! \page f14bcdummy MEN logo
   \menimages
