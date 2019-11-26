@@ -14,7 +14,7 @@
  */
  /*
  *---------------------------------------------------------------------------
- * Copyright (c) 2006-2019, MEN Mikro Elektronik GmbH
+ * Copyright 2006-2019, MEN Mikro Elektronik GmbH
  ****************************************************************************/
 /*
 * This program is free software: you can redistribute it and/or modify
@@ -83,7 +83,7 @@ static void usage(void)
 	printf("    -f           show firmware revision                    \n");
 	printf("Note: Only option -r supports PIC firmware with rev. < 2.0\n");
 	printf("\n");
-	printf("Copyright (c) 2006-2019, MEN Mikro Elektronik GmbH\n%s\n", IdentString);
+	printf("Copyright 2006-2019, MEN Mikro Elektronik GmbH\n%s\n", IdentString);
 }
 
 /********************************* main ************************************/
